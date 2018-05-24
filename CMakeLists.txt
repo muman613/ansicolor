@@ -3,4 +3,4 @@ project(ansicolor)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ansicolor main.cpp)
+add_executable(ansicolor main.cpp colordefs.cpp colordefs.h)

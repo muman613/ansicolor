@@ -1,18 +1,15 @@
 #include <iostream>
 #include <string>
+#include "colordefs.h"
 
 using namespace std;
 
-const char * escape = "\x1b";
-
-namespace color {
-    const std::string RESET = string(escape) + "[0m";
-    const std::string RED   = string(escape) + "[31m";
-    const std::string GREEN = string(escape) + "[32m";
-}
 int main() {
-    std::cout << color::GREEN << "Hello, World!" << color::RESET << std::endl;
-    std::cout << color::RED << "WARNING: Red alert!" << color::RESET << std::endl;
-
+    cout << color::FG::GREEN << "Hello, World!" << color::RESET << endl;
+    cout << color::FG::RED << "WARNING: Red alert!" << color::RESET << endl;
+    cout << "And here is a " << color::blue("blue moon", true) <<
+         " for you too!" <<  endl;
+    cout << color::FG::BOLD_YELLOW << color::BG::BLUE <<
+         "Here is some YELLOW on BLUE text..." << color::RESET << endl;
     return 0;
  }
